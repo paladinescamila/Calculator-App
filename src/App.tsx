@@ -15,7 +15,7 @@ function App() {
 					<h1>calc</h1>
 					<Switch theme={theme} setTheme={setTheme} />
 				</header>
-				<input className={`screen-${theme}`} value={expression} disabled></input>
+				<p className={`screen-${theme}`}>{expression}</p>
 				<Keypad theme={theme} expression={expression} setExpression={setExpression} />
 			</div>
 		</div>
