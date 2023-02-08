@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
+import calculate from './utils/calculate';
 import './App.scss';
 
 function App() {
-	const expression = '1+2';
-	const theme = 1;
+	const [expression, setExpression] = useState<string>('');
+	const [theme, setTheme] = useState<string>('1');
+
+	const pressKey = (key: Key) => {
+		if (/[0-9]/.test(key)) setExpression(expression + key);
+		else if (/[+x/-]/.test(key)) setExpression(expression + key);
+		else if (key === 'DEL') setExpression(expression.slice(0, -1));
+		else if (key === 'RESET') setExpression('');
+		else if (key === '=') setExpression(calculate(expression).toString());
+	};
 
 	return (
 		<div className={`app-${theme}`}>
@@ -28,24 +37,60 @@ function App() {
 				</header>
 				<p className={`screen-${theme}`}>{expression}</p>
 				<div className={`keypad-${theme}`}>
-					<button className={`key-${theme}`}>7</button>
-					<button className={`key-${theme}`}>8</button>
-					<button className={`key-${theme}`}>9</button>
-					<button className={`del-key-${theme}`}>DEL</button>
-					<button className={`key-${theme}`}>4</button>
-					<button className={`key-${theme}`}>5</button>
-					<button className={`key-${theme}`}>6</button>
-					<button className={`key-${theme}`}>+</button>
-					<button className={`key-${theme}`}>1</button>
-					<button className={`key-${theme}`}>2</button>
-					<button className={`key-${theme}`}>3</button>
-					<button className={`key-${theme}`}>-</button>
-					<button className={`key-${theme}`}>.</button>
-					<button className={`key-${theme}`}>0</button>
-					<button className={`key-${theme}`}>/</button>
-					<button className={`key-${theme}`}>x</button>
-					<button className={`reset-key-${theme}`}>RESET</button>
-					<button className={`equal-key-${theme}`}>=</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('7')}>
+						7
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('8')}>
+						8
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('9')}>
+						9
+					</button>
+					<button className={`del-key-${theme}`} onClick={() => pressKey('DEL')}>
+						DEL
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('4')}>
+						4
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('5')}>
+						5
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('6')}>
+						6
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('+')}>
+						+
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('1')}>
+						1
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('2')}>
+						2
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('3')}>
+						3
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('-')}>
+						-
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('.')}>
+						.
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('0')}>
+						0
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('/')}>
+						/
+					</button>
+					<button className={`key-${theme}`} onClick={() => pressKey('x')}>
+						x
+					</button>
+					<button className={`reset-key-${theme}`} onClick={() => pressKey('RESET')}>
+						RESET
+					</button>
+					<button className={`equal-key-${theme}`} onClick={() => pressKey('=')}>
+						=
+					</button>
 				</div>
 			</div>
 		</div>
