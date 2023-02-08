@@ -3,7 +3,7 @@ import './App.scss';
 
 function App() {
 	const expression = '1+2';
-	const theme = 1;
+	const theme = 3;
 
 	return (
 		<div className={`app-${theme}`}>

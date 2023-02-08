@@ -192,3 +192,85 @@ button {
 	box-shadow: 0 4px 0 0 $key-equal-shadow-1;
 	color: $text-light-1;
 }
+
+// Theme 2
+.app-2 {
+	background-color: $background-main-2;
+}
+
+.screen-2 {
+	background-color: $background-screen-2;
+	color: $text-light-2;
+}
+
+.header-2 {
+	color: $text-light-2;
+}
+
+.switch-buttons-2 {
+	background-color: $background-keypad-2;
+}
+
+.keypad-2 {
+	background-color: $background-keypad-2;
+}
+
+.key-2 {
+	background-color: $key-background-2;
+	box-shadow: 0 4px 0 0 $key-shadow-2;
+	color: $text-dark-2;
+}
+
+.del-key-2,
+.reset-key-2 {
+	background-color: $key-del-reset-background-2;
+	box-shadow: 0 4px 0 0 $key-del-reset-shadow-2;
+	color: $text-light-2;
+}
+
+.equal-key-2 {
+	background-color: $key-equal-background-2;
+	box-shadow: 0 4px 0 0 $key-equal-shadow-2;
+	color: $text-light-2;
+}
+
+// Theme 3
+.app-3 {
+	background-color: $background-main-3;
+}
+
+.screen-3 {
+	background-color: $background-screen-3;
+	color: $text-light-3;
+}
+
+.header-3 {
+	color: $text-light-3;
+}
+
+.switch-buttons-3 {
+	background-color: $background-keypad-3;
+}
+
+.keypad-3 {
+	background-color: $background-keypad-3;
+}
+
+.key-3 {
+	background-color: $key-background-3;
+	box-shadow: 0 4px 0 0 $key-shadow-3;
+	color: $text-dark-3;
+}
+
+.del-key-3,
+.reset-key-3 {
+	background-color: $key-del-reset-background-3;
+	box-shadow: 0 4px 0 0 $key-del-reset-shadow-3;
+	color: $text-light-3;
+}
+
+.equal-key-3 {
+	background-color: $key-equal-background-3;
+	box-shadow: 0 4px 0 0 $key-equal-shadow-3;
+	color: $text-light-3;
+}
