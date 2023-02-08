@@ -13,6 +13,21 @@ function Keypad(props: KeypadProps) {
 	const {theme, expression, setExpression} = props;
 
 	const pressKey = (key: Key) => {
+		// Key press animation
+		const keyElement = document.getElementById(key);
+
+		if (keyElement) {
+			keyElement.style.transform = 'translateY(4px)';
+			keyElement.style.transition = 'transform 0.1s ease-in-out, border-bottom-width 0.1s ease-in-out';
+			keyElement.style.borderBottomWidth = '0';
+			setTimeout(() => {
+				keyElement.style.transform = 'translateY(0)';
+				keyElement.style.transition = 'transform 0.1s ease-in-out, border-bottom-width 0.1s ease-in-out';
+				keyElement.style.borderBottomWidth = '4px';
+			}, 100);
+		}
+
+		// Key press logic
 		let newExpression = expression;
 
 		if (expression === 'Syntax Error') newExpression = '';
@@ -41,19 +56,19 @@ function Keypad(props: KeypadProps) {
 		<div className={`keypad-${theme}`}>
 			{keys.map((key, index) =>
 				key === 'DEL' ? (
-					<button className={`del-key-${theme}`} onClick={() => pressKey('DEL')} key='DEL'>
+					<button className={`del-key-${theme}`} onClick={() => pressKey('DEL')} key='DEL' id='DEL'>
 						DEL
 					</button>
 				) : key === 'RESET' ? (
-					<button className={`reset-key-${theme}`} onClick={() => pressKey('RESET')} key='RESET'>
+					<button className={`reset-key-${theme}`} onClick={() => pressKey('RESET')} key='RESET' id='RESET'>
 						RESET
 					</button>
 				) : key === '=' ? (
-					<button className={`equal-key-${theme}`} onClick={() => pressKey('=')} key='='>
+					<button className={`equal-key-${theme}`} onClick={() => pressKey('=')} key='=' id='='>
 						=
 					</button>
 				) : (
-					<button className={`key-${theme}`} onClick={() => pressKey(key as Key)} key={index}>
+					<button className={`key-${theme}`} onClick={() => pressKey(key as Key)} key={index} id={key}>
 						{key}
 					</button>
 				)

@@ -33,7 +33,7 @@
 		.key-#{$theme} {
 			font-size: 40px;
 			background-color: map-get($key-background, $theme);
-			box-shadow: 0 4px 0 0 map-get($key-shadow, $theme);
+			border-bottom: 4px solid map-get($key-shadow, $theme);
 			color: map-get($text-key, $theme);
 
 			&:hover {
@@ -48,7 +48,7 @@
 		.del-key-#{$theme},
 		.reset-key-#{$theme} {
 			background-color: map-get($key-del-reset-background, $theme);
-			box-shadow: 0 4px 0 0 map-get($key-del-reset-shadow, $theme);
+			border-bottom: 4px solid map-get($key-del-reset-shadow, $theme);
 			color: map-get($text-key-del-reset, $theme);
 
 			&:hover {
@@ -66,7 +66,7 @@
 
 		.equal-key-#{$theme} {
 			background-color: map-get($key-equal-background, $theme);
-			box-shadow: 0 4px 0 0 map-get($key-equal-shadow, $theme);
+			border-bottom: 4px solid map-get($key-equal-shadow, $theme);
 			color: map-get($text-key-equal, $theme);
 			grid-column: 3 / 5;
 
