@@ -27,8 +27,11 @@ function Keypad(props: KeypadProps) {
 		else if (key === '=') {
 			const result = calculate(newExpression);
 
-			if (!isNaN(result)) newExpression = result.toString();
-			else newExpression = 'Syntax Error';
+			if (isNaN(result)) newExpression = 'Syntax Error';
+			else {
+				if (result.toString().length > 14) newExpression = result.toExponential(7);
+				else newExpression = result.toString();
+			}
 		}
 
 		setExpression(newExpression);
