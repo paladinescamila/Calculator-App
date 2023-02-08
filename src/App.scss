@@ -1,4 +1,4 @@
-@import 'themes.scss';
+@import './styles/themes.scss';
 
 * {
 	margin: 0;
@@ -17,289 +17,158 @@ button {
 	border: none;
 }
 
-.app-1,
-.app-2,
-.app-3 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-}
-
-.content-1,
-.content-2,
-.content-3 {
-	width: 540px;
-}
-
-.header-1,
-.header-2,
-.header-3 {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
-	h1 {
-		font-size: 30px;
-	}
-}
-
-.switch-1,
-.switch-2,
-.switch-3 {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-
-	div {
+@each $theme in 1 2 3 {
+	.app-#{$theme} {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		min-height: 100vh;
+		background-color: map-get($background-main, $theme);
+	}
+	.content-#{$theme} {
+		width: 540px;
+	}
 
-		p {
-			padding-right: 25px;
-			font-size: 13px;
+	.header-#{$theme} {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: map-get($text-header, $theme);
+
+		h1 {
+			font-size: 30px;
 		}
 	}
 
-	.switch-numbers-1,
-	.switch-numbers-2,
-	.switch-numbers-3 {
-		width: 70px;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		margin-bottom: 7px;
+	.switch-#{$theme} {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
 
-		li {
+		div {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			font-size: 15px;
-			cursor: pointer;
+
+			p {
+				padding-right: 25px;
+				font-size: 13px;
+			}
+		}
+
+		.switch-numbers-#{$theme} {
+			width: 70px;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			margin-bottom: 7px;
+
+			li {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 15px;
+				cursor: pointer;
+			}
+		}
+
+		.switch-buttons-#{$theme} {
+			width: 70px;
+			height: 25px;
+			border-radius: 50px;
+			-webkit-border-radius: 50px;
+			-moz-border-radius: 50px;
+			-ms-border-radius: 50px;
+			-o-border-radius: 50px;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			background-color: map-get($background-keypad, $theme);
+
+			li {
+				width: 17px;
+				height: 17px;
+				border-radius: 50%;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				-ms-border-radius: 50%;
+				-o-border-radius: 50%;
+				align-self: center;
+				justify-self: center;
+				cursor: pointer;
+
+				@for $i from 1 through 3 {
+					&:nth-child(#{$i}) {
+						background-color: map-get($switch-button, $i);
+					}
+				}
+			}
 		}
 	}
 
-	.switch-buttons-1,
-	.switch-buttons-2,
-	.switch-buttons-3 {
-		width: 70px;
-		height: 25px;
-		border-radius: 50px;
-		-webkit-border-radius: 50px;
-		-moz-border-radius: 50px;
-		-ms-border-radius: 50px;
-		-o-border-radius: 50px;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-
-		li {
-			width: 17px;
-			height: 17px;
-			border-radius: 50%;
-			-webkit-border-radius: 50%;
-			-moz-border-radius: 50%;
-			-ms-border-radius: 50%;
-			-o-border-radius: 50%;
-			align-self: center;
-			justify-self: center;
-			cursor: pointer;
-
-			&:first-child {
-				background-color: $switch-button-1;
-			}
-
-			&:nth-child(2) {
-				background-color: $switch-button-2;
-			}
-
-			&:last-child {
-				background-color: $switch-button-3;
-			}
-		}
-	}
-}
-
-.screen-1,
-.screen-2,
-.screen-3 {
-	font-size: 55px;
-	text-align: right;
-	padding: 40px;
-	margin: 32px 0 24px 0;
-	width: 540px;
-	height: 128px;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
-}
-
-.keypad-1,
-.keypad-2,
-.keypad-3 {
-	width: 540px;
-	height: 480px;
-	padding: 32px;
-	display: grid;
-	grid-gap: 25px;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(5, 1fr);
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
-
-	button {
-		width: 100px;
-		height: 60px;
+	.screen-#{$theme} {
+		font-size: 55px;
+		text-align: right;
+		padding: 40px;
+		margin: 32px 0 24px 0;
+		width: 540px;
+		height: 128px;
 		border-radius: 10px;
 		-webkit-border-radius: 10px;
 		-moz-border-radius: 10px;
 		-ms-border-radius: 10px;
 		-o-border-radius: 10px;
-		font-size: 30px;
+		background-color: map-get($background-screen, $theme);
+		color: map-get($text-header, $theme);
 	}
 
-	.key-1,
-	.key-2,
-	.key-3 {
-		font-size: 40px;
+	.keypad-#{$theme} {
+		width: 540px;
+		height: 480px;
+		padding: 32px;
+		display: grid;
+		grid-gap: 25px;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+		background-color: map-get($background-keypad, $theme);
+
+		button {
+			width: 100px;
+			height: 60px;
+			border-radius: 10px;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			-ms-border-radius: 10px;
+			-o-border-radius: 10px;
+			font-size: 30px;
+		}
+
+		.key-#{$theme} {
+			font-size: 40px;
+			background-color: map-get($key-background, $theme);
+			box-shadow: 0 4px 0 0 map-get($key-shadow, $theme);
+			color: map-get($text-key, $theme);
+		}
+
+		.del-key-#{$theme},
+		.reset-key-#{$theme} {
+			background-color: map-get($key-del-reset-background, $theme);
+			box-shadow: 0 4px 0 0 map-get($key-del-reset-shadow, $theme);
+			color: map-get($text-key-del-reset, $theme);
+		}
+
+		.reset-key-#{$theme} {
+			grid-column: 1 / 3;
+		}
+
+		.equal-key-#{$theme} {
+			background-color: map-get($key-equal-background, $theme);
+			box-shadow: 0 4px 0 0 map-get($key-equal-shadow, $theme);
+			color: map-get($text-key-equal, $theme);
+			grid-column: 3 / 5;
+		}
 	}
-
-	.reset-key-1,
-	.reset-key-2,
-	.reset-key-3 {
-		grid-column: 1 / 3;
-	}
-
-	.equal-key-1,
-	.equal-key-2,
-	.equal-key-3 {
-		grid-column: 3 / 5;
-	}
-}
-
-// Theme 1
-.app-1 {
-	background-color: $background-main-1;
-}
-
-.screen-1 {
-	background-color: $background-screen-1;
-	color: $text-light-1;
-}
-
-.header-1 {
-	color: $text-light-1;
-}
-
-.switch-buttons-1 {
-	background-color: $background-keypad-1;
-}
-
-.keypad-1 {
-	background-color: $background-keypad-1;
-}
-
-.key-1 {
-	background-color: $key-background-1;
-	box-shadow: 0 4px 0 0 $key-shadow-1;
-	color: $text-dark-1;
-}
-
-.del-key-1,
-.reset-key-1 {
-	background-color: $key-del-reset-background-1;
-	box-shadow: 0 4px 0 0 $key-del-reset-shadow-1;
-	color: $text-light-1;
-}
-
-.equal-key-1 {
-	background-color: $key-equal-background-1;
-	box-shadow: 0 4px 0 0 $key-equal-shadow-1;
-	color: $text-light-1;
-}
-
-// Theme 2
-.app-2 {
-	background-color: $background-main-2;
-}
-
-.screen-2 {
-	background-color: $background-screen-2;
-	color: $text-dark-2;
-}
-
-.header-2 {
-	color: $text-dark-2;
-}
-
-.switch-buttons-2 {
-	background-color: $background-keypad-2;
-}
-
-.keypad-2 {
-	background-color: $background-keypad-2;
-}
-
-.key-2 {
-	background-color: $key-background-2;
-	box-shadow: 0 4px 0 0 $key-shadow-2;
-	color: $text-dark-2;
-}
-
-.del-key-2,
-.reset-key-2 {
-	background-color: $key-del-reset-background-2;
-	box-shadow: 0 4px 0 0 $key-del-reset-shadow-2;
-	color: $text-light-2;
-}
-
-.equal-key-2 {
-	background-color: $key-equal-background-2;
-	box-shadow: 0 4px 0 0 $key-equal-shadow-2;
-	color: $text-light-2;
-}
-
-// Theme 3
-.app-3 {
-	background-color: $background-main-3;
-}
-
-.screen-3 {
-	background-color: $background-screen-3;
-	color: $text-light-3;
-}
-
-.header-3 {
-	color: $text-light-3;
-}
-
-.switch-buttons-3 {
-	background-color: $background-keypad-3;
-}
-
-.keypad-3 {
-	background-color: $background-keypad-3;
-}
-
-.key-3 {
-	background-color: $key-background-3;
-	box-shadow: 0 4px 0 0 $key-shadow-3;
-	color: $text-light-3;
-}
-
-.del-key-3,
-.reset-key-3 {
-	background-color: $key-del-reset-background-3;
-	box-shadow: 0 4px 0 0 $key-del-reset-shadow-3;
-	color: $text-light-white-3;
-}
-
-.equal-key-3 {
-	background-color: $key-equal-background-3;
-	box-shadow: 0 4px 0 0 $key-equal-shadow-3;
-	color: $text-dark-3;
 }
