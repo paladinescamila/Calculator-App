@@ -6,7 +6,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 ## Links
 
--   [Solution](https://www.frontendmentor.io/solutions/stats-preview-card-componen-VHiHcHFpNk)
+-   [Solution](https://www.frontendmentor.io/solutions/calculator-app-_rllCtVHIH)
 -   [Live Site](https://ca-frontend-mentor.netlify.app/)
 
 ## Built with
