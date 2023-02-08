@@ -101,6 +101,19 @@ button {
 			-o-border-radius: 50%;
 			align-self: center;
 			justify-self: center;
+			cursor: pointer;
+
+			&:first-child {
+				background-color: $switch-button-1;
+			}
+
+			&:nth-child(2) {
+				background-color: $switch-button-2;
+			}
+
+			&:last-child {
+				background-color: $switch-button-3;
+			}
 		}
 	}
 }

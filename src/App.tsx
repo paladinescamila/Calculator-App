@@ -3,8 +3,8 @@ import calculate from './utils/calculate';
 import './App.scss';
 
 function App() {
+	// Calculator
 	const [expression, setExpression] = useState<string>('');
-	const [theme, setTheme] = useState<string>('1');
 
 	const pressKey = (key: Key) => {
 		if (/[0-9]/.test(key)) setExpression(expression + key);
@@ -20,6 +20,9 @@ function App() {
 		}
 	};
 
+	// Theme
+	const [theme, setTheme] = useState<number>(1);
+
 	return (
 		<div className={`app-${theme}`}>
 			<div className={`content-${theme}`}>
@@ -34,9 +37,9 @@ function App() {
 								<li>3</li>
 							</ul>
 							<ul className={`switch-buttons-${theme}`}>
-								<li></li>
-								<li></li>
-								<li></li>
+								<li style={{opacity: theme === 1 ? 1 : 0}} onClick={() => setTheme(1)}></li>
+								<li style={{opacity: theme === 2 ? 1 : 0}} onClick={() => setTheme(2)}></li>
+								<li style={{opacity: theme === 3 ? 1 : 0}} onClick={() => setTheme(3)}></li>
 							</ul>
 						</div>
 					</div>
