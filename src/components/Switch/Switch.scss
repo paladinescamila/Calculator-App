@@ -59,6 +59,10 @@
 				@for $i from 1 through 3 {
 					&:nth-child(#{$i}) {
 						background-color: map-get($switch-button, $i);
+
+						&:hover {
+							background-color: map-get($switch-button-hover, $i);
+						}
 					}
 				}
 			}

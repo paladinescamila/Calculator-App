@@ -36,6 +36,10 @@
 			box-shadow: 0 4px 0 0 map-get($key-shadow, $theme);
 			color: map-get($text-key, $theme);
 
+			&:hover {
+				background-color: map-get($key-background-hover, $theme);
+			}
+
 			@media screen and (max-width: 600px) {
 				font-size: 30px;
 			}
@@ -46,6 +50,10 @@
 			background-color: map-get($key-del-reset-background, $theme);
 			box-shadow: 0 4px 0 0 map-get($key-del-reset-shadow, $theme);
 			color: map-get($text-key-del-reset, $theme);
+
+			&:hover {
+				background-color: map-get($key-del-reset-background-hover, $theme);
+			}
 
 			@media screen and (max-width: 600px) {
 				font-size: 20px;
@@ -61,6 +69,10 @@
 			box-shadow: 0 4px 0 0 map-get($key-equal-shadow, $theme);
 			color: map-get($text-key-equal, $theme);
 			grid-column: 3 / 5;
+
+			&:hover {
+				background-color: map-get($key-equal-background-hover, $theme);
+			}
 
 			@media screen and (max-width: 600px) {
 				font-size: 20px;

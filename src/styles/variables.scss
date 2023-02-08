@@ -4,6 +4,12 @@ $switch-button: (
 	3: hsl(176, 100%, 44%),
 );
 
+$switch-button-hover: (
+	1: #fa6b5b,
+	2: #ff8b38,
+	3: #93fff9,
+);
+
 $background-main: (
 	1: hsl(222, 26%, 31%),
 	2: hsl(0, 0%, 90%),
@@ -34,6 +40,12 @@ $key-shadow: (
 	3: hsl(290, 70%, 36%),
 );
 
+$key-background-hover: (
+	1: #fff,
+	2: #fff,
+	3: #6b34ac,
+);
+
 $key-del-reset-background: (
 	1: hsl(225, 21%, 49%),
 	2: hsl(185, 42%, 37%),
@@ -46,6 +58,12 @@ $key-del-reset-shadow: (
 	3: hsl(285, 91%, 52%),
 );
 
+$key-del-reset-background-hover: (
+	1: #a2b3e1,
+	2: #62b5be,
+	3: #8631b0,
+);
+
 $key-equal-background: (
 	1: hsl(6, 63%, 50%),
 	2: hsl(25, 98%, 40%),
@@ -56,6 +74,12 @@ $key-equal-shadow: (
 	1: hsl(6, 70%, 34%),
 	2: hsl(25, 99%, 27%),
 	3: hsl(177, 92%, 70%),
+);
+
+$key-equal-background-hover: (
+	1: #fa6b5b,
+	2: #ff8b38,
+	3: #93fff9,
 );
 
 $text-header: (

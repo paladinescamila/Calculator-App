@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import calculate from './utils/calculate';
 import './styles/App.scss';
 
 import Switch from './components/Switch/Switch';
