@@ -3,7 +3,7 @@ import './App.scss';
 
 function App() {
 	const expression = '1+2';
-	const theme = 3;
+	const theme = 1;
 
 	return (
 		<div className={`app-${theme}`}>
@@ -19,15 +19,9 @@ function App() {
 								<li>3</li>
 							</ul>
 							<ul className={`switch-buttons-${theme}`}>
-								<li>
-									<button></button>
-								</li>
-								<li>
-									<button></button>
-								</li>
-								<li>
-									<button></button>
-								</li>
+								<li></li>
+								<li></li>
+								<li></li>
 							</ul>
 						</div>
 					</div>
