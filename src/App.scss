@@ -27,6 +27,10 @@ button {
 	}
 	.content-#{$theme} {
 		width: 540px;
+
+		@media (max-width: 600px) {
+			width: 88%;
+		}
 	}
 
 	.header-#{$theme} {
@@ -109,7 +113,6 @@ button {
 		text-align: right;
 		padding: 40px;
 		margin: 32px 0 24px 0;
-		width: 540px;
 		height: 128px;
 		border-radius: 10px;
 		-webkit-border-radius: 10px;
@@ -118,16 +121,20 @@ button {
 		-o-border-radius: 10px;
 		background-color: map-get($background-screen, $theme);
 		color: map-get($text-header, $theme);
+
+		@media screen and (max-width: 600px) {
+			padding: 25px;
+			font-size: 40px;
+			height: 88px;
+		}
 	}
 
 	.keypad-#{$theme} {
-		width: 540px;
-		height: 480px;
 		padding: 32px;
 		display: grid;
 		grid-gap: 25px;
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: repeat(5, 1fr);
+		grid-template-columns: repeat(4, 100px);
+		grid-template-rows: repeat(5, 60px);
 		border-radius: 10px;
 		-webkit-border-radius: 10px;
 		-moz-border-radius: 10px;
@@ -135,15 +142,20 @@ button {
 		-o-border-radius: 10px;
 		background-color: map-get($background-keypad, $theme);
 
+		@media screen and (max-width: 600px) {
+			padding: 24px;
+			grid-gap: 13px;
+			grid-template-columns: repeat(4, 1fr);
+		}
+
 		button {
-			width: 100px;
-			height: 60px;
 			border-radius: 10px;
 			-webkit-border-radius: 10px;
 			-moz-border-radius: 10px;
 			-ms-border-radius: 10px;
 			-o-border-radius: 10px;
 			font-size: 30px;
+			cursor: pointer;
 		}
 
 		.key-#{$theme} {
@@ -151,6 +163,10 @@ button {
 			background-color: map-get($key-background, $theme);
 			box-shadow: 0 4px 0 0 map-get($key-shadow, $theme);
 			color: map-get($text-key, $theme);
+
+			@media screen and (max-width: 600px) {
+				font-size: 30px;
+			}
 		}
 
 		.del-key-#{$theme},
@@ -158,6 +174,10 @@ button {
 			background-color: map-get($key-del-reset-background, $theme);
 			box-shadow: 0 4px 0 0 map-get($key-del-reset-shadow, $theme);
 			color: map-get($text-key-del-reset, $theme);
+
+			@media screen and (max-width: 600px) {
+				font-size: 20px;
+			}
 		}
 
 		.reset-key-#{$theme} {
@@ -169,6 +189,10 @@ button {
 			box-shadow: 0 4px 0 0 map-get($key-equal-shadow, $theme);
 			color: map-get($text-key-equal, $theme);
 			grid-column: 3 / 5;
+
+			@media screen and (max-width: 600px) {
+				font-size: 20px;
+			}
 		}
 	}
 }
