@@ -7,6 +7,7 @@
 	outline: none;
 	// outline: 1px solid red;
 	border: none;
+	font-family: 'League Spartan', sans-serif;
 }
 
 ul {
@@ -38,6 +39,7 @@ button {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	font-size: 30px;
 }
 
 .theme-selector-1,
@@ -49,6 +51,7 @@ button {
 	p {
 		height: 25px;
 		padding-right: 25px;
+		font-size: 13px;
 	}
 }
 
@@ -67,6 +70,7 @@ button {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			font-size: 15px;
 		}
 	}
 
@@ -100,6 +104,7 @@ button {
 .screen-1,
 .screen-2,
 .screen-3 {
+	font-size: 55px;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -137,6 +142,13 @@ button {
 		-moz-border-radius: 10px;
 		-ms-border-radius: 10px;
 		-o-border-radius: 10px;
+		font-size: 30px;
+	}
+
+	.key-1,
+	.key-2,
+	.key-3 {
+		font-size: 40px;
 	}
 
 	.reset-key-1,
@@ -259,18 +271,18 @@ button {
 .key-3 {
 	background-color: $key-background-3;
 	box-shadow: 0 4px 0 0 $key-shadow-3;
-	color: $text-dark-3;
+	color: $text-light-3;
 }
 
 .del-key-3,
 .reset-key-3 {
 	background-color: $key-del-reset-background-3;
 	box-shadow: 0 4px 0 0 $key-del-reset-shadow-3;
-	color: $text-light-3;
+	color: $text-light-white-3;
 }
 
 .equal-key-3 {
 	background-color: $key-equal-background-3;
 	box-shadow: 0 4px 0 0 $key-equal-shadow-3;
-	color: $text-light-3;
+	color: $text-dark-3;
 }

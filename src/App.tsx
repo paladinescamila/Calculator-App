@@ -41,15 +41,15 @@ function App() {
 					<button className={`key-${theme}`}>4</button>
 					<button className={`key-${theme}`}>5</button>
 					<button className={`key-${theme}`}>6</button>
-					<button>+</button>
+					<button className={`key-${theme}`}>+</button>
 					<button className={`key-${theme}`}>1</button>
 					<button className={`key-${theme}`}>2</button>
 					<button className={`key-${theme}`}>3</button>
-					<button>-</button>
-					<button>.</button>
+					<button className={`key-${theme}`}>-</button>
+					<button className={`key-${theme}`}>.</button>
 					<button className={`key-${theme}`}>0</button>
-					<button>/</button>
-					<button>x</button>
+					<button className={`key-${theme}`}>/</button>
+					<button className={`key-${theme}`}>x</button>
 					<button className={`reset-key-${theme}`}>RESET</button>
 					<button className={`equal-key-${theme}`}>=</button>
 				</div>
