@@ -28,14 +28,14 @@ function App() {
 			<div className={`content-${theme}`}>
 				<header className={`header-${theme}`}>
 					<h1>calc</h1>
-					<div className={`theme-selector-${theme}`}>
-						<p>THEME</p>
-						<div className={`switch-${theme}`}>
-							<ul className={`switch-numbers-${theme}`}>
-								<li>1</li>
-								<li>2</li>
-								<li>3</li>
-							</ul>
+					<div className={`switch-${theme}`}>
+						<ul className={`switch-numbers-${theme}`}>
+							<li onClick={() => setTheme(1)}>1</li>
+							<li onClick={() => setTheme(2)}>2</li>
+							<li onClick={() => setTheme(3)}>3</li>
+						</ul>
+						<div>
+							<p>THEME</p>
 							<ul className={`switch-buttons-${theme}`}>
 								<li style={{opacity: theme === 1 ? 1 : 0}} onClick={() => setTheme(1)}></li>
 								<li style={{opacity: theme === 2 ? 1 : 0}} onClick={() => setTheme(2)}></li>

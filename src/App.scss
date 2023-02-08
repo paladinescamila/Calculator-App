@@ -5,7 +5,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	outline: none;
-	// outline: 1px solid red;
 	border: none;
 	font-family: 'League Spartan', sans-serif;
 }
@@ -45,27 +44,28 @@ button {
 	}
 }
 
-.theme-selector-1,
-.theme-selector-2,
-.theme-selector-3 {
-	display: flex;
-	align-items: flex-end;
-
-	p {
-		height: 25px;
-		padding-right: 25px;
-		font-size: 13px;
-	}
-}
-
 .switch-1,
 .switch-2,
 .switch-3 {
-	width: 70px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		p {
+			padding-right: 25px;
+			font-size: 13px;
+		}
+	}
 
 	.switch-numbers-1,
 	.switch-numbers-2,
 	.switch-numbers-3 {
+		width: 70px;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		margin-bottom: 7px;
@@ -75,13 +75,14 @@ button {
 			justify-content: center;
 			align-items: center;
 			font-size: 15px;
+			cursor: pointer;
 		}
 	}
 
 	.switch-buttons-1,
 	.switch-buttons-2,
 	.switch-buttons-3 {
-		width: 100%;
+		width: 70px;
 		height: 25px;
 		border-radius: 50px;
 		-webkit-border-radius: 50px;
