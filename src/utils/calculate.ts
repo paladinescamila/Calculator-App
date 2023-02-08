@@ -1,29 +1,29 @@
 const calculate = (expression: string) => {
-	// Separa por sumas
+	// Separates by plus
 	const sums = expression.split('+');
 
-	// Separa por restas
+	// Separates by minus
 	const subs = sums.map((item) => item.split('-'));
 
-	// Separa por multiplicaciones
+	// Separates by multiplication
 	const mults = subs.map((item) => item.map((item2) => item2.split('x')));
 
-	// Separa por divisiones
+	// Separates by division
 	const divs = mults.map((item) => item.map((item2) => item2.map((item3) => item3.split('/'))));
 
-	// Convierte a numeros
+	// Converts to numbers
 	const numbers = divs.map((item) => item.map((item2) => item2.map((item3) => item3.map((item4) => Number(item4)))));
 
-	// Reduce por divisiones
+	// Reduces by division
 	const divsRes = numbers.map((item) => item.map((item2) => item2.map((item3) => item3.reduce((a, b) => a / b))));
 
-	// Reduce por multiplicaciones
+	// Reduces by multiplication
 	const multsRes = divsRes.map((item) => item.map((item2) => item2.reduce((a, b) => a * b)));
 
-	// Reduce por restas
+	// Reduces by subtraction
 	const subsRes = multsRes.map((item) => item.reduce((a, b) => a - b));
 
-	// Reduce por sumas
+	// Reduces by addition
 	const sumsRes = subsRes.reduce((a, b) => a + b);
 
 	return sumsRes;

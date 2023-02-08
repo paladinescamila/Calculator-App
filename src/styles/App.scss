@@ -1,0 +1,67 @@
+@import 'variables.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	font-family: 'League Spartan', sans-serif;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	border: none;
+}
+
+@each $theme in 1 2 3 {
+	.app-#{$theme} {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		background-color: map-get($background-main, $theme);
+	}
+	.content-#{$theme} {
+		width: 540px;
+
+		@media (max-width: 600px) {
+			width: 88%;
+		}
+	}
+
+	.header-#{$theme} {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: map-get($text-header, $theme);
+
+		h1 {
+			font-size: 30px;
+		}
+	}
+
+	.screen-#{$theme} {
+		font-size: 55px;
+		text-align: right;
+		padding: 40px;
+		margin: 32px 0 24px 0;
+		height: 128px;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+		background-color: map-get($background-screen, $theme);
+		color: map-get($text-header, $theme);
+
+		@media screen and (max-width: 600px) {
+			padding: 25px;
+			font-size: 40px;
+			height: 88px;
+		}
+	}
+}
