@@ -13,17 +13,25 @@ function Keypad(props: KeypadProps) {
 	const {theme, expression, setExpression} = props;
 
 	const pressKey = (key: Key) => {
-		if (/[0-9]/.test(key)) setExpression(expression + key);
-		else if (/[+x/-]/.test(key)) setExpression(expression + key);
-		else if (key === '.') setExpression(expression + key);
-		else if (key === 'DEL') setExpression(expression.slice(0, -1));
-		else if (key === 'RESET') setExpression('');
-		else if (key === '=') {
-			const result = calculate(expression);
+		let newExpression = expression;
 
-			if (!isNaN(result)) setExpression(result.toString());
-			else setExpression('Syntax Error');
+		if (expression === 'Syntax Error') newExpression = '';
+		else if (expression === 'Infinity') newExpression = '';
+		else if (expression === '0') newExpression = '';
+
+		if (/[0-9]/.test(key)) newExpression += key;
+		else if (/[+x/-]/.test(key)) newExpression += key;
+		else if (key === '.') newExpression += key;
+		else if (key === 'DEL') newExpression = newExpression.slice(0, -1) || '0';
+		else if (key === 'RESET') newExpression = '0';
+		else if (key === '=') {
+			const result = calculate(newExpression);
+
+			if (!isNaN(result)) newExpression = result.toString();
+			else newExpression = 'Syntax Error';
 		}
+
+		setExpression(newExpression);
 	};
 
 	return (

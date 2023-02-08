@@ -5,7 +5,7 @@ import Switch from './components/Switch/Switch';
 import Keypad from './components/Keypad/Keypad';
 
 function App() {
-	const [expression, setExpression] = useState<string>('');
+	const [expression, setExpression] = useState<string>('0');
 	const [theme, setTheme] = useState<1 | 2 | 3>(1);
 
 	return (
@@ -15,7 +15,7 @@ function App() {
 					<h1>calc</h1>
 					<Switch theme={theme} setTheme={setTheme} />
 				</header>
-				<p className={`screen-${theme}`}>{expression}</p>
+				<input className={`screen-${theme}`} value={expression} disabled></input>
 				<Keypad theme={theme} expression={expression} setExpression={setExpression} />
 			</div>
 		</div>
