@@ -9,9 +9,15 @@ function App() {
 	const pressKey = (key: Key) => {
 		if (/[0-9]/.test(key)) setExpression(expression + key);
 		else if (/[+x/-]/.test(key)) setExpression(expression + key);
+		else if (key === '.') setExpression(expression + key);
 		else if (key === 'DEL') setExpression(expression.slice(0, -1));
 		else if (key === 'RESET') setExpression('');
-		else if (key === '=') setExpression(calculate(expression).toString());
+		else if (key === '=') {
+			const result = calculate(expression);
+
+			if (!isNaN(result)) setExpression(result.toString());
+			else setExpression('Syntax Error');
+		}
 	};
 
 	return (
